@@ -29,6 +29,7 @@ public class FurnaceListener implements Listener {
 			if (FurnaceRecipes.spoutreciperesult.containsKey(source.getDurability())) {
 				ItemStack r = FurnaceRecipes.spoutreciperesult.get(source.getDurability());
                                 plugin.getServer().addRecipe(new FurnaceRecipe(r, source.getType()));
+                //source.setAmount(source.getAmount() - 1);
 				event.setResult(r);
 				return;
 			}
@@ -180,6 +181,6 @@ public class FurnaceListener implements Listener {
 				return;
 			}
 		}
-		event.setCancelled(true);
+		//event.setCancelled(true);
 	}
 }
