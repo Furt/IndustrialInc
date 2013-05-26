@@ -51,7 +51,7 @@ public class CustomBlocks {
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mtRecipe);
 		
 		//Furnace Recipes
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(plugin.ci.copperIngot, 1), 318, copperOre.getCustomId());
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(plugin.ci.copperIngot), 318, copperOre.getCustomId());
 		
 	}
 
