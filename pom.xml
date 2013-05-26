@@ -6,6 +6,23 @@
   <name>IndustrialInc</name>
   <description>${project.name} takes certain aspects of industrial type mods and adds them to Spout!</description>
   
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <main.class>me.furt.industrial.IndustrialInc</main.class>
+  </properties>
+  
+  <!-- CI Management -->
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>http://crimson-gaming.com:8080</url>
+  </ciManagement>
+
+  <!-- Issue Management -->
+  <issueManagement>
+    <url>https://github.com/Furt/IndustrialInc/issues</url>
+    <system>GitHub</system>
+  </issueManagement>
+  
   <repositories>
     <repository>
       <id>bukkit</id>
