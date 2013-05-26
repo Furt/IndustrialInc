@@ -1,5 +1,6 @@
 package me.furt.industrial;
 
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
@@ -70,7 +71,7 @@ public class CustomItems {
 		//Furnace recipes
 		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(copperIngot), 318, CustomBlocks.copperOre.getCustomId());
 		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(tinIngot), 318, CustomBlocks.tinOre.getCustomId());
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(temperedIronIngot), MaterialData.ironIngot.getRawId(), MaterialData.ironIngot.getRawData());
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(temperedIronIngot), Material.IRON_INGOT.getId(), Material.IRON_INGOT.getId());
 		
 	}
 
