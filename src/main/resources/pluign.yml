@@ -1,0 +1,6 @@
+name: ${project.name}
+main: ${main.class}
+version: ${project.version}
+authors: [furt, MarMed]
+description: >
+             ${project.name} takes certain aspects of industrial type mods and adds them to Spout! 
