@@ -10,10 +10,10 @@ public class IndustrialInc extends JavaPlugin {
 	public CustomItems ci;
 	@Override
 	public void onEnable() {
-		cb = new CustomBlocks(this);
-		cb.init();
 		ci = new CustomItems(this);
 		ci.init();
+		cb = new CustomBlocks(this);
+		cb.init();
 		PluginDescriptionFile pdf = this.getDescription();
 		this.getLogger().log(Level.INFO,
 				"v" + pdf.getVersion() + " is now enabled!");
