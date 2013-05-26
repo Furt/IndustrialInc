@@ -6,13 +6,13 @@ import me.furt.industrial.block.BlockMiningTube;
 import me.furt.industrial.block.BlockMiningTubeTip;
 import me.furt.industrial.block.BlockTinOre;
 
-import org.bukkit.Bukkit;
-import org.bukkit.inventory.FurnaceRecipe;
 import org.bukkit.inventory.ItemStack;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.material.MaterialData;
+
+import com.github.Zarklord1.FurnaceApi.FurnaceRecipes;
 
 public class CustomBlocks {
 	private IndustrialInc plugin;
@@ -51,7 +51,7 @@ public class CustomBlocks {
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mtRecipe);
 		
 		//Furnace Recipes
-		Bukkit.getServer().addRecipe(new FurnaceRecipe(new SpoutItemStack(copperOre), (org.bukkit.material.MaterialData) MaterialData.ironIngot));
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(plugin.ci.copperIngot, 1), 318, copperOre.getCustomId());
 		
 	}
 

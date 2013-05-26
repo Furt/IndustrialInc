@@ -5,6 +5,8 @@ import java.util.logging.Level;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.github.Zarklord1.FurnaceApi.FurnaceListener;
+
 public class IndustrialInc extends JavaPlugin {
 	public CustomBlocks cb;
 	public CustomItems ci;
@@ -14,6 +16,7 @@ public class IndustrialInc extends JavaPlugin {
 		ci.init();
 		cb = new CustomBlocks(this);
 		cb.init();
+		this.getServer().getPluginManager().registerEvents(new FurnaceListener(this), this);
 		PluginDescriptionFile pdf = this.getDescription();
 		this.getLogger().log(Level.INFO,
 				"v" + pdf.getVersion() + " is now enabled!");
