@@ -6,6 +6,8 @@ import me.furt.industrial.block.BlockMiningTube;
 import me.furt.industrial.block.BlockMiningTubeTip;
 import me.furt.industrial.block.BlockTinOre;
 
+import org.bukkit.Bukkit;
+import org.bukkit.inventory.FurnaceRecipe;
 import org.bukkit.inventory.ItemStack;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
@@ -31,7 +33,7 @@ public class CustomBlocks {
 		miningTubeTip = new BlockMiningTubeTip(plugin);
 		miningTube = new BlockMiningTube(plugin);
 		
-		//Mining Machine Recipe
+		//Crafting Recipes
 		ItemStack mmResult = new SpoutItemStack(miningMachine, 1);
 		SpoutShapedRecipe mmRecipe = new SpoutShapedRecipe(mmResult);
 		mmRecipe.shape("ACA", "BDB", "ADA");
@@ -45,11 +47,11 @@ public class CustomBlocks {
 		mtRecipe.shape(" A ", " A ", " A ");
 		mtRecipe.setIngredient('A', plugin.ci.temperedIronIngot);
 		
-		
-		
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mmRecipe);
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mtRecipe);
 		
+		//Furnace Recipes
+		Bukkit.getServer().addRecipe(new FurnaceRecipe(new SpoutItemStack(copperOre), (org.bukkit.material.MaterialData) MaterialData.ironIngot));
 		
 	}
 
