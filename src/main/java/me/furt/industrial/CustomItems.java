@@ -38,11 +38,34 @@ public class CustomItems {
 		
 		//recipes
 		ItemStack riiResult = new SpoutItemStack(temperedIronIngot, 2);
-		SpoutShapedRecipe riirecipe = new SpoutShapedRecipe(riiResult);
-		riirecipe.shape("   ", " AA", "  B");
-		riirecipe.setIngredient('A', MaterialData.ironIngot);
-		riirecipe.setIngredient('B', MaterialData.coal);
-		SpoutManager.getMaterialManager().registerSpoutRecipe(riirecipe);
+		SpoutShapedRecipe riiRecipe = new SpoutShapedRecipe(riiResult);
+		riiRecipe.shape("   ", " AA", "  B");
+		riiRecipe.setIngredient('A', MaterialData.ironIngot);
+		riiRecipe.setIngredient('B', MaterialData.coal);
+		
+		ItemStack cwResult = new SpoutItemStack(copperWire, 12);
+		SpoutShapedRecipe cwRecipe = new SpoutShapedRecipe(cwResult);
+		cwRecipe.shape("   ", "AAA", "   ");
+		cwRecipe.setIngredient('A', copperIngot);
+		
+		ItemStack miResult = new SpoutItemStack(mixedIngot, 6);
+		SpoutShapedRecipe miRecipe = new SpoutShapedRecipe(miResult);
+		miRecipe.shape("AAA", "BBB", "CCC");
+		miRecipe.setIngredient('A', temperedIronIngot);
+		miRecipe.setIngredient('B', copperIngot);
+		miRecipe.setIngredient('C', tinIngot);
+		
+		ItemStack tcResult = new SpoutItemStack(tinCell, 16);
+		SpoutShapedRecipe tcRecipe = new SpoutShapedRecipe(tcResult);
+		tcRecipe.shape(" A ", "A A", " A ");
+		tcRecipe.setIngredient('A', tinIngot);
+		
+		SpoutManager.getMaterialManager().registerSpoutRecipe(riiRecipe);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(cwRecipe);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(miRecipe);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(tcRecipe);
+		
+		
 	}
 
 }

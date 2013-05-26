@@ -28,15 +28,29 @@ public class CustomBlocks {
 		copperOre = new BlockCopperOre(plugin);
 		tinOre = new BlockTinOre(plugin);
 		miningMachine = new BlockMiningMachine(plugin);
+		miningTubeTip = new BlockMiningTubeTip(plugin);
+		miningTube = new BlockMiningTube(plugin);
 		
 		//Mining Machine Recipe
 		ItemStack mmResult = new SpoutItemStack(miningMachine, 1);
-		SpoutShapedRecipe recipe = new SpoutShapedRecipe(mmResult);
-		recipe.shape("AAA", "ACA", "BBB");
-		recipe.setIngredient('A', plugin.ci.temperedIronIngot);
-		recipe.setIngredient('B', MaterialData.redstone);
-		recipe.setIngredient('C', MaterialData.diamondPickaxe);
-		SpoutManager.getMaterialManager().registerSpoutRecipe(recipe);
+		SpoutShapedRecipe mmRecipe = new SpoutShapedRecipe(mmResult);
+		mmRecipe.shape("ACA", "BDB", "ADA");
+		mmRecipe.setIngredient('A', plugin.ci.temperedIronIngot);
+		mmRecipe.setIngredient('B', MaterialData.redstone);
+		mmRecipe.setIngredient('C', MaterialData.diamondPickaxe);
+		mmRecipe.setIngredient('D', miningTube);
+		
+		ItemStack mtResult = new SpoutItemStack(miningTube, 6);
+		SpoutShapedRecipe mtRecipe = new SpoutShapedRecipe(mtResult);
+		mtRecipe.shape(" A ", " A ", " A ");
+		mtRecipe.setIngredient('A', plugin.ci.temperedIronIngot);
+		
+		
+		
+		SpoutManager.getMaterialManager().registerSpoutRecipe(mmRecipe);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(mtRecipe);
+		
+		
 	}
 
 }
