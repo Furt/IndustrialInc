@@ -28,8 +28,8 @@ public class CustomBlocks {
 		//Mining Machine Recipe
 		ItemStack mmResult = new SpoutItemStack(miningMachine, 1);
 		SpoutShapedRecipe recipe = new SpoutShapedRecipe(mmResult); // Note: ABC is the bottom row, CBC is the middle row, BCB is the top row
-		recipe.shape("AAA", "ACA", "BBB");
-		recipe.setIngredient('A', MaterialData.ironBars);
+		recipe.shape("BBB", "ACA", "AAA");
+		recipe.setIngredient('A', MaterialData.ironIngot);
 		recipe.setIngredient('B', MaterialData.redstone);
 		recipe.setIngredient('C', MaterialData.diamondPickaxe);
 		SpoutManager.getMaterialManager().registerSpoutRecipe(recipe);
