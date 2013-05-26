@@ -6,12 +6,22 @@ import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 
-import me.furt.industrial.item.ItemTemperedIron;
+import me.furt.industrial.item.ItemCopperIngot;
+import me.furt.industrial.item.ItemCopperWire;
+import me.furt.industrial.item.ItemMixedIngot;
+import me.furt.industrial.item.ItemTemperedIronIngot;
+import me.furt.industrial.item.ItemTinCell;
+import me.furt.industrial.item.ItemTinIngot;
 
 public class CustomItems {
 	private IndustrialInc plugin;
 
-	public ItemTemperedIron temperedIronIngot;
+	public ItemTemperedIronIngot temperedIronIngot;
+	public ItemCopperIngot copperIngot;
+	public ItemCopperWire copperWire;
+	public ItemTinIngot tinIngot;
+	public ItemTinCell tinCell;
+	public ItemMixedIngot mixedIngot;
 	
 	public CustomItems(IndustrialInc instance) {
 		this.plugin = instance;
@@ -19,7 +29,12 @@ public class CustomItems {
 	}
 	
 	public void init() {
-		temperedIronIngot = new ItemTemperedIron(plugin);
+		temperedIronIngot = new ItemTemperedIronIngot(plugin);
+		copperIngot = new ItemCopperIngot(plugin);
+		copperWire = new ItemCopperWire(plugin);
+		tinIngot = new ItemTinIngot(plugin);
+		tinCell = new ItemTinCell(plugin);
+		mixedIngot = new ItemMixedIngot(plugin);
 		
 		//recipes
 		ItemStack riiResult = new SpoutItemStack(temperedIronIngot, 2);

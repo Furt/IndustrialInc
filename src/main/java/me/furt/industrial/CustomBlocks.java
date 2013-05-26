@@ -1,28 +1,32 @@
 package me.furt.industrial;
 
+import me.furt.industrial.block.BlockCopperOre;
 import me.furt.industrial.block.BlockMiningMachine;
+import me.furt.industrial.block.BlockMiningTube;
+import me.furt.industrial.block.BlockMiningTubeTip;
+import me.furt.industrial.block.BlockTinOre;
 
 import org.bukkit.inventory.ItemStack;
 import org.getspout.spoutapi.SpoutManager;
-import org.getspout.spoutapi.block.design.Texture;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 
 public class CustomBlocks {
-	public Texture machines;
-	public Texture generators;
-	
 	private IndustrialInc plugin;
 	public BlockMiningMachine miningMachine;
+	public BlockMiningTube miningTube;
+	public BlockMiningTubeTip miningTubeTip;
+	public BlockCopperOre copperOre;
+	public BlockTinOre tinOre;
 	
 	public CustomBlocks(IndustrialInc instance) {
 		this.plugin = instance;
 	}
 
 	public void init() {
-		machines = new Texture(plugin, "block_machine.png", 256, 256, 16);
-		generators = new Texture(plugin, "block_generator.png", 256, 256, 16);
+		copperOre = new BlockCopperOre(plugin);
+		tinOre = new BlockTinOre(plugin);
 		miningMachine = new BlockMiningMachine(plugin);
 		
 		//Mining Machine Recipe
