@@ -12,15 +12,13 @@ import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 
-import com.github.Zarklord1.FurnaceApi.FurnaceRecipes;
-
 public class CustomBlocks {
 	private IndustrialInc plugin;
-	public BlockMiningMachine miningMachine;
-	public BlockMiningTube miningTube;
-	public BlockMiningTubeTip miningTubeTip;
-	public BlockCopperOre copperOre;
-	public BlockTinOre tinOre;
+	public static BlockMiningMachine miningMachine;
+	public static BlockMiningTube miningTube;
+	public static BlockMiningTubeTip miningTubeTip;
+	public static BlockCopperOre copperOre;
+	public static BlockTinOre tinOre;
 	
 	public CustomBlocks(IndustrialInc instance) {
 		this.plugin = instance;
@@ -37,7 +35,7 @@ public class CustomBlocks {
 		ItemStack mmResult = new SpoutItemStack(miningMachine, 1);
 		SpoutShapedRecipe mmRecipe = new SpoutShapedRecipe(mmResult);
 		mmRecipe.shape("ACA", "BDB", "ADA");
-		mmRecipe.setIngredient('A', plugin.ci.temperedIronIngot);
+		mmRecipe.setIngredient('A', CustomItems.temperedIronIngot);
 		mmRecipe.setIngredient('B', MaterialData.redstone);
 		mmRecipe.setIngredient('C', MaterialData.diamondPickaxe);
 		mmRecipe.setIngredient('D', miningTube);
@@ -45,14 +43,10 @@ public class CustomBlocks {
 		ItemStack mtResult = new SpoutItemStack(miningTube, 6);
 		SpoutShapedRecipe mtRecipe = new SpoutShapedRecipe(mtResult);
 		mtRecipe.shape(" A ", " A ", " A ");
-		mtRecipe.setIngredient('A', plugin.ci.temperedIronIngot);
+		mtRecipe.setIngredient('A', CustomItems.temperedIronIngot);
 		
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mmRecipe);
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mtRecipe);
-		
-		//Furnace Recipes
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(plugin.ci.copperIngot), 318, copperOre.getCustomId());
-		
 	}
 
 }
