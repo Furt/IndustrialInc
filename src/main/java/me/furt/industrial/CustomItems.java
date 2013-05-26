@@ -1,6 +1,5 @@
 package me.furt.industrial;
 
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
@@ -19,12 +18,12 @@ import me.furt.industrial.item.ItemTinIngot;
 public class CustomItems {
 	private IndustrialInc plugin;
 
-	public static ItemTemperedIronIngot temperedIronIngot;
-	public static ItemCopperIngot copperIngot;
-	public static ItemCopperWire copperWire;
-	public static ItemTinIngot tinIngot;
-	public static ItemTinCell tinCell;
-	public static ItemMixedIngot mixedIngot;
+	public ItemTemperedIronIngot temperedIronIngot;
+	public ItemCopperIngot copperIngot;
+	public ItemCopperWire copperWire;
+	public ItemTinIngot tinIngot;
+	public ItemTinCell tinCell;
+	public ItemMixedIngot mixedIngot;
 	
 	public CustomItems(IndustrialInc instance) {
 		this.plugin = instance;
@@ -69,9 +68,9 @@ public class CustomItems {
 		SpoutManager.getMaterialManager().registerSpoutRecipe(tcRecipe);
 		
 		//Furnace recipes
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(copperIngot), 318, CustomBlocks.copperOre.getCustomId());
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(tinIngot), 318, CustomBlocks.tinOre.getCustomId());
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(temperedIronIngot), Material.IRON_INGOT.getId(), Material.IRON_INGOT.getId());
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(copperIngot), 318, plugin.cb.copperOre.getCustomId());
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(tinIngot), 318, plugin.cb.tinOre.getCustomId());
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(temperedIronIngot), MaterialData.ironIngot.getRawId(), MaterialData.ironIngot.getRawData());
 		
 	}
 

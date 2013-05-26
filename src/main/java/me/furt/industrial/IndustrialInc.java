@@ -8,10 +8,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.github.Zarklord1.FurnaceApi.FurnaceListener;
 
 public class IndustrialInc extends JavaPlugin {
+	public CustomItems ci;
+	public CustomBlocks cb;
+
 	@Override
 	public void onEnable() {
-		new CustomItems(this).init();
-		new CustomBlocks(this).init();
+		ci = new CustomItems(this);
+		ci.init();
+		cb = new CustomBlocks(this);
+		cb.init();
 		this.getServer().getPluginManager().registerEvents(new FurnaceListener(this), this);
 		PluginDescriptionFile pdf = this.getDescription();
 		this.getLogger().log(Level.INFO,
