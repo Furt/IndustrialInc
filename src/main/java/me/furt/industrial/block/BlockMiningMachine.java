@@ -13,7 +13,6 @@ public class BlockMiningMachine extends GenericCubeCustomBlock{
 
 	public BlockMiningMachine(IndustrialInc plugin) {
         super(plugin, "Mining Machine", "https://dl.dropboxusercontent.com/u/17392489/MiningMachine.png", 16);
-        this.setRotate(true);
         this.setHardness(0.5F);
     }
  
