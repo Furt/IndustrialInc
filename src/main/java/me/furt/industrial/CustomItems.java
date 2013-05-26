@@ -11,7 +11,7 @@ import me.furt.industrial.item.ItemTemperedIron;
 public class CustomItems {
 	private IndustrialInc plugin;
 
-	public static ItemTemperedIron temperedIronIngot;
+	public ItemTemperedIron temperedIronIngot;
 	
 	public CustomItems(IndustrialInc instance) {
 		this.plugin = instance;
@@ -23,12 +23,11 @@ public class CustomItems {
 		
 		//recipes
 		ItemStack riiResult = new SpoutItemStack(temperedIronIngot, 2);
-		SpoutShapedRecipe recipe = new SpoutShapedRecipe(riiResult);
-		recipe.shape("CCC", "CAA", "CCB");
-		recipe.setIngredient('A', MaterialData.ironIngot);
-		recipe.setIngredient('B', MaterialData.coal);
-		recipe.setIngredient('C', MaterialData.air);
-		SpoutManager.getMaterialManager().registerSpoutRecipe(recipe);
+		SpoutShapedRecipe riirecipe = new SpoutShapedRecipe(riiResult);
+		riirecipe.shape("   ", " AA", "  B");
+		riirecipe.setIngredient('A', MaterialData.ironIngot);
+		riirecipe.setIngredient('B', MaterialData.coal);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(riirecipe);
 	}
 
 }
