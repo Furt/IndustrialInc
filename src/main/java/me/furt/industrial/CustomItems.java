@@ -6,8 +6,6 @@ import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 
-import com.github.Zarklord1.FurnaceApi.FurnaceRecipes;
-
 import me.furt.industrial.item.ItemCopperIngot;
 import me.furt.industrial.item.ItemCopperWire;
 import me.furt.industrial.item.ItemMixedIngot;
@@ -67,10 +65,7 @@ public class CustomItems {
 		SpoutManager.getMaterialManager().registerSpoutRecipe(miRecipe);
 		SpoutManager.getMaterialManager().registerSpoutRecipe(tcRecipe);
 		
-		//Furnace recipes
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(copperIngot), 318, plugin.cb.copperOre.getCustomId());
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(tinIngot), 318, plugin.cb.tinOre.getCustomId());
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(temperedIronIngot), MaterialData.ironIngot.getRawId(), MaterialData.ironIngot.getRawData());
+		
 		
 	}
 
