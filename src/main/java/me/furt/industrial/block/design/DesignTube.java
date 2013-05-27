@@ -10,7 +10,7 @@ public class DesignTube extends GenericCubeBlockDesign {
 
 	public DesignTube(IndustrialInc plugin) {
 		super(plugin, new Texture(plugin, "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/miningtube.png", 16, 16, 16), 0);
-		setRenderPass(1);
+		setRenderPass(0);
 	    setMinBrightness(0.0F);
 	    setBrightness(0.5F);
 	    setMaxBrightness(1.0F);
