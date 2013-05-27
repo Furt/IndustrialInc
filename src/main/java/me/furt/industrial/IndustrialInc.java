@@ -23,15 +23,14 @@ public class IndustrialInc extends JavaPlugin {
 
 		this.getServer().getPluginManager()
 				.registerEvents(new FurnaceListener(this), this);
-		
+
 		// Furnace recipes
 		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(ci.copperIngot),
 				318, cb.copperOre.getCustomId());
-		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(ci.tinIngot), 318,
-				cb.tinOre.getCustomId());
-		FurnaceRecipes.CustomFurnaceRecipe(
-				new SpoutItemStack(ci.temperedIronIngot),
-				MaterialData.ironIngot.getRawId(),
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(ci.tinIngot),
+				318, cb.tinOre.getCustomId());
+		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(
+				ci.temperedIronIngot), MaterialData.ironIngot.getRawId(),
 				MaterialData.ironIngot.getRawData());
 
 		PluginDescriptionFile pdf = this.getDescription();

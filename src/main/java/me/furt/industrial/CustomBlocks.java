@@ -19,7 +19,7 @@ public class CustomBlocks {
 	public BlockMiningTubeTip miningTubeTip;
 	public BlockCopperOre copperOre;
 	public BlockTinOre tinOre;
-	
+
 	public CustomBlocks(IndustrialInc instance) {
 		this.plugin = instance;
 	}
@@ -30,8 +30,8 @@ public class CustomBlocks {
 		miningMachine = new BlockMiningMachine(plugin);
 		miningTubeTip = new BlockMiningTubeTip(plugin);
 		miningTube = new BlockMiningTube(plugin);
-		
-		//Crafting Recipes
+
+		// Crafting Recipes
 		ItemStack mmResult = new SpoutItemStack(miningMachine, 1);
 		SpoutShapedRecipe mmRecipe = new SpoutShapedRecipe(mmResult);
 		mmRecipe.shape("ACA", "BDB", "ADA");
@@ -39,12 +39,12 @@ public class CustomBlocks {
 		mmRecipe.setIngredient('B', MaterialData.redstone);
 		mmRecipe.setIngredient('C', MaterialData.diamondPickaxe);
 		mmRecipe.setIngredient('D', miningTube);
-		
+
 		ItemStack mtResult = new SpoutItemStack(miningTube, 6);
 		SpoutShapedRecipe mtRecipe = new SpoutShapedRecipe(mtResult);
 		mtRecipe.shape(" A ", " A ", " A ");
 		mtRecipe.setIngredient('A', plugin.ci.temperedIronIngot);
-		
+
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mmRecipe);
 		SpoutManager.getMaterialManager().registerSpoutRecipe(mtRecipe);
 	}

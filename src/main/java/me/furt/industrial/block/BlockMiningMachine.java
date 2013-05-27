@@ -4,10 +4,14 @@ import me.furt.industrial.IndustrialInc;
 
 import org.getspout.spoutapi.material.block.GenericCubeCustomBlock;
 
-public class BlockMiningMachine extends GenericCubeCustomBlock{
+public class BlockMiningMachine extends GenericCubeCustomBlock {
 
 	public BlockMiningMachine(IndustrialInc plugin) {
-        super(plugin, "Mining Machine", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/miningmachine.png", 16);
-        this.setHardness(4.0F);
-    }
+		super(
+				plugin,
+				"Mining Machine",
+				"https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/miningmachine.png",
+				16);
+		this.setHardness(4.0F);
+	}
 }
