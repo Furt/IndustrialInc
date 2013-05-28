@@ -1,5 +1,6 @@
 package me.furt.industrial;
 
+import java.io.File;
 import java.util.logging.Level;
 
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -16,13 +17,31 @@ public class IndustrialInc extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+		if (!getDataFolder().exists())
+			getDataFolder().mkdir();
+
+		if (!new File(this.getDataFolder() + "/imageCache").exists())
+			new File(this.getDataFolder() + "/imageCache").mkdir();
+
+		getConfig().addDefault("pixel_size", 16);
+		getConfig().options().copyDefaults(true);
+		saveConfig();
+
+		Assets assets = new Assets(this);
+		assets.addAsset("block_0");
+		assets.addAsset("block_cable");
+		assets.addAsset("block_electric");
+		assets.addAsset("block_generator");
+		assets.addAsset("block_machine");
+		assets.addAsset("item_0");
+		assets.addAsset("GUIMiner");
 		ci = new CustomItems(this);
 		ci.init();
 		cb = new CustomBlocks(this);
 		cb.init();
 
-		this.getServer().getPluginManager()
-				.registerEvents(new FurnaceListener(this), this);
+		getServer().getPluginManager().registerEvents(
+				new FurnaceListener(this), this);
 
 		// Furnace recipes
 		FurnaceRecipes.CustomFurnaceRecipe(new SpoutItemStack(ci.copperIngot),

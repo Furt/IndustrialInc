@@ -2,14 +2,14 @@ package me.furt.industrial;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
 import java.util.HashMap;
+
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
 import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.block.design.Texture;
 
 public class Assets {
 	private IndustrialInc plugin;
@@ -30,35 +30,49 @@ public class Assets {
 		imageCache.clear();
 	}
 
-	public void addAsset(String name, String image) {
-		URL url = getClass().getResource(image);
-		
-		File cacheFile = new File(url.getFile());
-		try {
-			InputStream inputStream = url.openStream();
-			OutputStream out = new FileOutputStream(cacheFile);
+	public Texture getTexture(String cachedName) {
+		BufferedImage bi = getCachedImage(cachedName);
+		return new Texture(plugin, plugin.getDataFolder() + File.separator
+				+ "imageCache" + File.separator + cachedName + ".png",
+				bi.getWidth(), bi.getHeight(), bi.getHeight()
+						/ plugin.getConfig().getInt("pixel_size"));
 
-			byte[] bytes = new byte[1024];
-			int read;
-			while ((read = inputStream.read(bytes)) != -1) {
-				out.write(bytes, 0, read);
-			}
-			out.flush();
-			out.close();
-			inputStream.close();
-		} catch (Exception exception) {
-		}
-		cacheFile.deleteOnExit();
+	}
 
-		if (image.endsWith(".png")) {
+	public void addAsset(String image) {
+		if (new File(plugin.getDataFolder() + File.separator + "imageCache"
+				+ File.separator + image + ".png").exists()) {
+			File cacheFile = new File(plugin.getDataFolder() + File.separator
+					+ "imageCache" + File.separator + image + ".png");
 			BufferedImage bufferedImage = null;
 			try {
-				bufferedImage = ImageIO.read(url);
+				bufferedImage = ImageIO.read(cacheFile);
 			} catch (Exception exception) {
 			}
-			imageCache.put(name, bufferedImage);
+			imageCache.put(image, bufferedImage);
+			SpoutManager.getFileManager().addToPreLoginCache(plugin, cacheFile);
+			return;
+		}
+		try {
+			URL inputUrl = getClass().getResource(image + ".png");
+			File dest = new File(plugin.getDataFolder() + File.separator
+					+ "imageCache" + File.separator + image + ".png");
+			FileUtils.copyURLToFile(inputUrl, dest);
+			BufferedImage bufferedImage = null;
+			try {
+				bufferedImage = ImageIO.read(dest);
+			} catch (Exception exception) {
+			}
+			imageCache.put(image, bufferedImage);
+			SpoutManager.getFileManager().addToPreLoginCache(plugin, dest);
+			return;
+		} catch (Exception e) {
+
 		}
 
-		SpoutManager.getFileManager().addToPreLoginCache(plugin, cacheFile);
+		// plugin.getDataFolder() + "/cacheImages/" + image;
+		// URL url = getClass().getResource(image);
+		// imageCache.put(name, bufferedImage);
+		// SpoutManager.getFileManager().addToPreLoginCache(plugin, cacheFile);
 	}
 }
