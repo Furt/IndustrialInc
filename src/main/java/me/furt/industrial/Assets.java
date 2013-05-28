@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.logging.Level;
 
 import javax.imageio.ImageIO;
 
@@ -48,6 +49,7 @@ public class Assets {
 			try {
 				bufferedImage = ImageIO.read(cacheFile);
 			} catch (Exception exception) {
+				plugin.getLogger().log(Level.SEVERE, "addAsset could not buffer image: " + image);
 			}
 			imageCache.put(image, bufferedImage);
 			SpoutManager.getFileManager().addToPreLoginCache(plugin, cacheFile);
@@ -62,12 +64,13 @@ public class Assets {
 			try {
 				bufferedImage = ImageIO.read(dest);
 			} catch (Exception exception) {
+				plugin.getLogger().log(Level.SEVERE, "addAsset could not buffer image: " + image);
 			}
 			imageCache.put(image, bufferedImage);
 			SpoutManager.getFileManager().addToPreLoginCache(plugin, dest);
 			return;
 		} catch (Exception e) {
-
+			plugin.getLogger().log(Level.SEVERE, "addAsset could not copy image: " + image);
 		}
 
 		// plugin.getDataFolder() + "/cacheImages/" + image;
