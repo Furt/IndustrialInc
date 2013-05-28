@@ -8,8 +8,8 @@ public class BlockMiningMachine extends GenericCubeCustomBlock {
 
 	public BlockMiningMachine(IndustrialInc plugin) {
 		super(plugin, "Mining Machine", new DesignGenericBlock(plugin,
-				plugin.assets.getTexture("block_machine"), new int[] { 98, 83,
-						68, 53, 38, 23 }));
+				plugin.assets.getTexture("block_machine"), new int[] { 102, 86,
+						70, 55, 39, 23 }));
 		this.setHardness(4.0F);
 	}
 }

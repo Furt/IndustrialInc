@@ -42,6 +42,7 @@ public class IndustrialInc extends JavaPlugin {
 		assets.addAsset("mixedingot");
 		assets.addAsset("copperwirebare");
 		assets.addAsset("tincell");
+		
 		ci = new CustomItems(this);
 		ci.init();
 		cb = new CustomBlocks(this);
