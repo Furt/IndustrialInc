@@ -36,6 +36,12 @@ public class IndustrialInc extends JavaPlugin {
 		assets.addAsset("block_machine");
 		assets.addAsset("item_0");
 		assets.addAsset("GUIMiner");
+		assets.addAsset("copperingot");
+		assets.addAsset("tiningot");
+		assets.addAsset("temperedironingot");
+		assets.addAsset("mixedingot");
+		assets.addAsset("copperwirebare");
+		assets.addAsset("tincell");
 		ci = new CustomItems(this);
 		ci.init();
 		cb = new CustomBlocks(this);
