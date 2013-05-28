@@ -49,10 +49,12 @@ public class Assets {
 			try {
 				bufferedImage = ImageIO.read(cacheFile);
 			} catch (Exception exception) {
-				plugin.getLogger().log(Level.SEVERE, "addAsset could not buffer image: " + image);
+				plugin.getLogger().log(Level.SEVERE,
+						"addAsset could not buffer image: " + image);
 			}
 			imageCache.put(image, bufferedImage);
 			SpoutManager.getFileManager().addToPreLoginCache(plugin, cacheFile);
+			plugin.getLogger().log(Level.INFO, "Asset: " + image + " loaded.");
 			return;
 		}
 		try {
@@ -64,18 +66,16 @@ public class Assets {
 			try {
 				bufferedImage = ImageIO.read(dest);
 			} catch (Exception exception) {
-				plugin.getLogger().log(Level.SEVERE, "addAsset could not buffer image: " + image);
+				plugin.getLogger().log(Level.SEVERE,
+						"addAsset could not buffer image: " + image);
 			}
 			imageCache.put(image, bufferedImage);
 			SpoutManager.getFileManager().addToPreLoginCache(plugin, dest);
+			plugin.getLogger().log(Level.INFO, "Asset: " + image + " loaded.");
 			return;
 		} catch (Exception e) {
-			plugin.getLogger().log(Level.SEVERE, "addAsset could not copy image: " + image);
+			plugin.getLogger().log(Level.SEVERE,
+					"addAsset could not copy image: " + image);
 		}
-
-		// plugin.getDataFolder() + "/cacheImages/" + image;
-		// URL url = getClass().getResource(image);
-		// imageCache.put(name, bufferedImage);
-		// SpoutManager.getFileManager().addToPreLoginCache(plugin, cacheFile);
 	}
 }
