@@ -9,6 +9,6 @@ public class BlockMiningTube extends GenericCuboidCustomBlock {
 
 	public BlockMiningTube(IndustrialInc plugin) {
 		super(plugin, "Mining Tube", new DesignTube(plugin));
-		this.setHardness(4.0F);
+		setHardness(3.0F);
 	}
 }

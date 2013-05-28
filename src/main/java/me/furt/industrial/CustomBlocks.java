@@ -25,6 +25,14 @@ public class CustomBlocks {
 	}
 
 	public void init() {
+		Assets assets = new Assets(plugin);
+		assets.addAsset("blocks", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/block_0.png");
+		assets.addAsset("wire", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/block_cable.png");
+		assets.addAsset("electric", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/block_electric.png");
+		assets.addAsset("generator", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/block_generator.png");
+		assets.addAsset("machine", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/block_machine.png");
+		assets.addAsset("items", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/item_0.png");
+		assets.addAsset("guimining", "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/GUIMiner.png");
 		copperOre = new BlockCopperOre(plugin);
 		tinOre = new BlockTinOre(plugin);
 		miningMachine = new BlockMiningMachine(plugin);
