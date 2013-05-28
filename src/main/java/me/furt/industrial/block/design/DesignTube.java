@@ -2,14 +2,14 @@ package me.furt.industrial.block.design;
 
 import me.furt.industrial.IndustrialInc;
 
-import org.getspout.spoutapi.block.design.GenericCubeBlockDesign;
+import org.getspout.spoutapi.block.design.GenericCuboidBlockDesign;
 import org.getspout.spoutapi.block.design.Quad;
 import org.getspout.spoutapi.block.design.Texture;
 
-public class DesignTube extends GenericCubeBlockDesign {
+public class DesignTube extends GenericCuboidBlockDesign {
 
 	public DesignTube(IndustrialInc plugin) {
-		super(plugin, new Texture(plugin, "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/miningtube.png", 16, 16, 16), 0);
+		super(plugin, new Texture(plugin, "https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/miningtube.png", 16, 16, 16), 0, 0.38F, 0.0F, 0.38F, 0.62F, 1.0F, 0.62F);
 		setRenderPass(0);
 	    setMinBrightness(0.5F);
 	    setBrightness(1.0F);
