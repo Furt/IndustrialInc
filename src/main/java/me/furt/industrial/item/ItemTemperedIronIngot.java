@@ -1,16 +1,16 @@
 package me.furt.industrial.item;
 
+import java.io.File;
+
 import me.furt.industrial.IndustrialInc;
 
 import org.getspout.spoutapi.material.item.GenericCustomItem;
 
 public class ItemTemperedIronIngot extends GenericCustomItem {
 
-	public ItemTemperedIronIngot(IndustrialInc plugin) {
-		super(
-				plugin,
-				"Tempered Iron Ingot",
-				"https://dl.dropboxusercontent.com/u/17392489/IndustrialInc/temperedironingot.png");
+	public ItemTemperedIronIngot(IndustrialInc plugin, File texture) {
+		super(plugin, "Tempered Iron Ingot");
+		setTexture(texture);
 	}
 
 }

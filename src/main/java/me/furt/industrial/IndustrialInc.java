@@ -14,6 +14,7 @@ import com.github.Zarklord1.FurnaceApi.FurnaceRecipes;
 public class IndustrialInc extends JavaPlugin {
 	public CustomItems ci;
 	public CustomBlocks cb;
+	public Assets assets;
 
 	@Override
 	public void onEnable() {
@@ -27,7 +28,7 @@ public class IndustrialInc extends JavaPlugin {
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 
-		Assets assets = new Assets(this);
+		assets = new Assets(this);
 		assets.addAsset("block_0");
 		assets.addAsset("block_cable");
 		assets.addAsset("block_electric");
@@ -53,13 +54,14 @@ public class IndustrialInc extends JavaPlugin {
 				MaterialData.ironIngot.getRawData());
 
 		PluginDescriptionFile pdf = this.getDescription();
-		this.getLogger().log(Level.INFO,
+		getLogger().log(Level.INFO,
 				"v" + pdf.getVersion() + " is now enabled!");
 	}
 
 	@Override
 	public void onDisable() {
-		this.getLogger().log(Level.INFO, "Disabled");
+		assets.freeImageCacheMemory();
+		getLogger().log(Level.INFO, "Disabled");
 	}
 
 }

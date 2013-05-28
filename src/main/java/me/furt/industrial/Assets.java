@@ -40,6 +40,11 @@ public class Assets {
 
 	}
 
+	public File getTextureFile(String cachedName) {
+		return new File(plugin.getDataFolder() + File.separator
+				+ "imageCache" + File.separator + cachedName + ".png");
+	}
+
 	public void addAsset(String image) {
 		if (new File(plugin.getDataFolder() + File.separator + "imageCache"
 				+ File.separator + image + ".png").exists()) {

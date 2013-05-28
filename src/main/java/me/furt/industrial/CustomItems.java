@@ -29,12 +29,12 @@ public class CustomItems {
 	}
 
 	public void init() {
-		temperedIronIngot = new ItemTemperedIronIngot(plugin);
-		copperIngot = new ItemCopperIngot(plugin);
-		copperWire = new ItemCopperWire(plugin);
-		tinIngot = new ItemTinIngot(plugin);
-		tinCell = new ItemTinCell(plugin);
-		mixedIngot = new ItemMixedIngot(plugin);
+		temperedIronIngot = new ItemTemperedIronIngot(plugin, plugin.assets.getTextureFile("temperedironingot"));
+		copperIngot = new ItemCopperIngot(plugin, plugin.assets.getTextureFile("copperingot"));
+		copperWire = new ItemCopperWire(plugin, plugin.assets.getTextureFile("copperwirebare"));
+		tinIngot = new ItemTinIngot(plugin, plugin.assets.getTextureFile("tiningot"));
+		tinCell = new ItemTinCell(plugin, plugin.assets.getTextureFile("tincell"));
+		mixedIngot = new ItemMixedIngot(plugin, plugin.assets.getTextureFile("mixedingot"));
 
 		// recipes
 		ItemStack riiResult = new SpoutItemStack(temperedIronIngot, 2);
